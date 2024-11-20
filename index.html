@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BBC Cavite Laguna - Race Results</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header Style */
+    header {
+      background-color: black;
+      background-image: url('https://raw.githubusercontent.com/rpfg/Race-Results/refs/heads/main/Images/BBC.png');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 25vh; /* Dynamic height based on viewport */
+    }
+
+    /* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+  margin-top: 20px;
+}
+
+.tabs-container {
+  display: flex; /* Use flexbox to position tabs side by side */
+  justify-content: center; /* Centers the tabs */
+  align-items: center; /* Vertically centers the tabs */
+}
+
+.home-tab, .race-results-tab {
+      padding: 8px 12px;
+      margin-right: 20px;
+      font-size: 1.2em;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+.home-tab:hover, .race-results-tab:hover {
+  background: #d3d3d3; /* Same hover effect */
+}
+
+/* Optional: remove the margin for the last tab */
+.tabs-container .race-results-tab {
+  margin-right: 0;
+}
+
+    /* Tabs */
+    .tabs-container {
+      display: block;
+      margin-top: 20px;
+    }
+
+.tab {
+  padding: 8px 12px;
+  margin: 5px;
+  font-size: 1.2em;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-tab:hover {
+  background: linear-gradient(to bottom, #f0f0f0, #d4d4d4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tab:hover {
+  background: linear-gradient(to bottom, #f0f0f0, #d4d4d4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tab:active {
+  background: linear-gradient(to bottom, #d4d4d4, #f0f0f0);
+  transform: translateY(2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tab.active {
+  background: linear-gradient(to bottom, #004d00, #007300);
+  color: white;
+  border: 1px solid #003a00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+    /* Tabs */
+    .tabs-container {
+      display: block;
+      margin-top: 20px;
+    }
+
+    .home-tab, .race-results-tab {
+      padding: 8px 12px;
+      margin-right: 20px;
+      font-size: 1.2em;
+      text-align: center;
+      background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .home-tab:hover, .race-results-tab:hover {
+      background: #d3d3d3;
+    }
+
+
+     /* Add container for Race Stats and additional info */
+  .stats-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center the content horizontally */
+    gap: 20px; /* Add spacing between sections */
+    margin: 30px auto; /* Center the container on the page */
+    width: 80%; /* Limit the container width */
+  }
+
+  .race-stats, .additional-info {
+    flex: 1; /* Each section takes up equal width */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text inside the boxes to the left */
+  }
+
+  .race-stats h3, .additional-info h3 {
+    margin-top: 0;
+  }
+
+  .race-stats p, .additional-info p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+
+  /* Poster Section */
+.poster-section {
+  flex: 1; /* Makes it equal in width to the other sections */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.poster-section img {
+  max-width: 100%; /* Make the image responsive */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.poster-section h3 {
+  margin-top: 0;
+}
+
+
+    /* Footer */
+    footer {
+      background-color: #004d00;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+   <!-- Header Section -->
+   <header></header>
+
+      <!-- Main Content -->
+      <div class="content">
+        <!-- Tabs -->
+        <div class="tabs-container">
+          <div class="home-tab" onclick="loadHome()">Home</div>
+          <div class="race-results-tab">
+            <a href="https://rpfg.github.io/Race-Results/" target="_self" style="color: inherit; text-decoration: none;">Race Results</a>
+          </div>
+        </div>
+
+   <div class="stats-container">
+    <!-- Race Stats Section -->
+    <div class="race-stats">
+      <h3>Race Stats</h3>
+      <p><strong>Derby Entries:</strong> <span id="derbyEntries">Loading...</span></p>
+      <p><strong>Derby Live Birds:</strong> 75</p>
+      <p><strong>Winning Time:</strong> 15:30</p>
+      <p><strong>Race Distance:</strong> 500 km</p>
+      <p><strong>Weather:</strong> Sunny</p>
+    </div>
+  
+    <!-- Additional Info Section -->
+    <div class="additional-info">
+      <h3>Additional Info</h3>
+      <p><strong>Organizer:</strong> BBC Cavite Laguna</p>
+      <p><strong>Contact:</strong> (123) 456-7890</p>
+      <p><strong>Location:</strong> Cavite Laguna Derby Club</p>
+      <p><strong>Upcoming Races:</strong> November 25, 2024</p>
+      <p><strong>Notes:</strong> Safety measures are in place for all participants.</p>
+    </div>
+  
+    <!-- Poster Section -->
+<!-- Poster Section -->
+<div class="poster-section">
+    <h3>Upcoming Race</h3>
+    <img 
+      src="https://i.imgur.com/fSSS9gZ.jpg" 
+      alt="Upcoming Race Poster">
+    <p>Don't miss our upcoming event!</p>
+  </div>
+  
+  </div>
+  
+
+  <!-- Loading Indicator -->
+  <div id="loadingIndicator" style="display: none;">
+    <img src="https://media.tenor.com/zxJMTNCOhbkAAAAM/pegion.gif" alt="Loading...">
+  </div>
+
+   <!-- Footer -->
+   <footer>
+    <p>Follow us on social media:</p>
+    <a href="https://www.facebook.com/profile.php?id=61561642689457">Facebook</a>
+  </footer>
+</body>
+
+  <script>
+    // Home button logic
+    function loadHome() {
+      window.location.href = '/'; // Redirect to homepage
+    }
+
+    // Function to fetch Derby Entries from Google Sheets
+    async function fetchDerbyEntries() {
+      const sheetURL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRAJ5ZY-hkjERKXzqdtvLJH1z9BGmQvHuKLM-mw74PV6SYGH9-pkbV88tI7z0ngVmlb9RVkptAq03lVs/pub?gid=0&single=true&output=csv'; // Replace this with your published sheet URL
+
+      try {
+        const response = await fetch(sheetURL);
+        const data = await response.text();
+
+        // Convert the CSV data to an array
+        const rows = data.split("\n").map(row => row.split(","));
+        
+        // Assuming Derby Entries are in the first column
+        const derbyEntries = rows[1] ? rows[1][0] : "No Data"; // Adjust depending on the sheet structure
+
+        // Update the DOM
+        document.getElementById('derbyEntries').innerText = derbyEntries;
+      } catch (error) {
+        console.error("Error fetching derby entries:", error);
+        document.getElementById('derbyEntries').innerText = "Error loading data";
+      }
+    }
+
+    // Fetch the derby entries when the page loads
+    window.onload = fetchDerbyEntries;
+  </script>
+
+</body>
+</html>
